@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require_relative './npr_cli_project'
+require './lib/npr_cli_project'
 
 NprCliProject::CLI.new.call 
