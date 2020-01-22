@@ -1,5 +1,5 @@
 class NprCliProject::CLI 
-  #extends NPR
+  
   
   
   def call 
@@ -17,21 +17,11 @@ class NprCliProject::CLI
      headline_2  = NPR.new("Headline 2", "Summary2")
      headline_3  = NPR.new("Headline 3", "Summary 3")
    @news = NPR.all 
-   
+  count = 1 
   @news.each do  |news|
-      puts news.headline 
+      puts "#{count}. " + news.headline 
+      count +=1 
     end 
-    
-  @news.each do |news|
-     puts news.summary 
-  end 
-    
-    # puts "test"
-    # puts <<-DOC 
-    # 1. Headline #1 
-    # 2. Headline #2 
-    
-    # DOC
   end 
   
   def selection 
@@ -39,11 +29,10 @@ class NprCliProject::CLI
     input = nil 
     while input != "exit"
     input = gets.strip.downcase
-    case input 
-    when "1"
-      puts "Headline 1 summary"
-    when "2"
-      puts "Headline 2 summary"
+    new_stories = 
+     if input.to_i > 0
+        news_stories = @news[input.to_i-1]
+        puts "#{news_stories.summary}"
     end 
   end 
 end 
