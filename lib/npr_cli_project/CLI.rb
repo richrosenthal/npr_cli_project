@@ -1,6 +1,7 @@
 class NprCliProject::CLI 
   #extends NPR
   
+  
   def call 
     puts "Welcome to All Gems Considered"
     puts "Your number one place for all NPR daily news"
@@ -13,12 +14,17 @@ class NprCliProject::CLI
   def list_headlines
     
      headline_1  = NPR.new("Headline 1", "Summary1")
-     headline_2  = NPR.new("Headline 22", "Summary2")
+     headline_2  = NPR.new("Headline 2", "Summary2")
      headline_3  = NPR.new("Headline 3", "Summary 3")
+   @news = NPR.all 
+   
+  @news.each do  |news|
+      puts news.headline 
+    end 
     
-    puts headline_1.headline
-    puts headline_2.headline
-    puts headline_3.summary
+  @news.each do |news|
+     puts news.summary 
+  end 
     
     # puts "test"
     # puts <<-DOC 
