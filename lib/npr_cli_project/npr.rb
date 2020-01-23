@@ -4,9 +4,7 @@ class NprCliProject::NPR
   attr_accessor :headline, :summary 
   @@all = [] 
  
- def initialize
-   
- end 
+ 
   
   def save 
     @@all << self 
@@ -22,11 +20,12 @@ class NprCliProject::NPR
      
    end 
     
-  def self.get_stories
-   self.grab_npr_page.css("item-info")
+  def self.stories
+    self.make_stories
+   @@all
   end 
   
-  def make_stories
+  def self.make_stories
    doc = Nokogiri::HTML(open("https://www.npr.org/sections/news/"))
    stories = doc.css("div.item-info")
     stories.each do |item|
