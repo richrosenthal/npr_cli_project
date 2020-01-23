@@ -1,15 +1,12 @@
 require 'pry'
 
-class NPR
+class NprCliProject::NPR
   attr_accessor :headline, :summary 
   @@all = [] 
  
-  
-# def initialize(headline, summary)
-#     @headline = headline
-#     @summary = summary 
-#     save 
-#   end 
+# def initialize
+#   grab_npr_page
+# end 
   
   def save 
     @@all << self 
@@ -19,11 +16,22 @@ class NPR
     @@all 
   end 
   
-   def grab_npr_page
-    Nokogiri::HTML(open("https://www.npr.org/"))
+   def self.grab_npr_page
     
+    
+    doc = Nokogiri::HTML(open("https://www.npr.org/"))
+    
+    story = self.new
+    story.headline = doc.search("h3.title").text.strip
+    story.summary = doc.search("p.teaser").text.strip
+    
+    story 
    end 
+   
+   def self.news_stories
+      self.grab_npr_page
+    end 
 
-
+ 
   
 end 
