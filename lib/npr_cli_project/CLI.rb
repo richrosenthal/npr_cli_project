@@ -18,11 +18,11 @@ class NprCliProject::CLI
     
     
    @news = NprCliProject::NPR.stories
-   binding.pry
+   
  
   count = 1 
-  @news.each do  |news1|
-      puts "#{count}. "  
+  @news.each do  |news_stories|
+      puts "#{count}. " + news_stories.headline  
       count +=1 
     end 
   end 
@@ -35,8 +35,18 @@ class NprCliProject::CLI
     new_stories = nil
      if input.to_i > 0
         news_stories = @news[input.to_i-1]
-        # puts "#{news_stories.summary}"
-        puts "1"
+         puts "#{news_stories.summary}"
+         puts ""
+         puts "Type list to go back or exit to quit program"
+         input2 = gets.strip.downcase
+         if input2 == "list"
+           list_headlines
+         elsif 
+            input2 == "exit"
+              goodbye
+         else 
+           puts "I do not understand"
+       end 
     end 
   end 
 end 
