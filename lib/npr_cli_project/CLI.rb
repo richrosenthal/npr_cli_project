@@ -16,6 +16,7 @@ class NprCliProject::CLI
      headline_1  = NPR.new("Headline 1", "Summary1")
      headline_2  = NPR.new("Headline 2", "Summary2")
      headline_3  = NPR.new("Headline 3", "Summary 3")
+     binding.pry
    @news = NPR.all 
   count = 1 
   @news.each do  |news|
