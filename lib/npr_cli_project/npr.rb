@@ -18,21 +18,26 @@ class NprCliProject::NPR
   
    def self.grab_npr_page
     
+     Nokogiri::HTML(open("https://www.npr.org/sections/news/"))
+     
+   end 
     
-    doc = Nokogiri::HTML(open("https://www.npr.org/sections/news/"))
-    
-    doc.search("div.slug-wrap").each do |project|
-    story = self.new
-    story.headline = doc.search("h2.title").text.strip
-    story.summary = doc.search("p.teaser").text.strip
-    #@@all << self 
-    story 
+  def self.get_stories
+   self.grab_npr_page.css("item-info")
+  end 
+  
+  def self.make_stories
+   doc = Nokogiri::HTML(open("https://www.npr.org/sections/news/"))
+   stories = doc.css("div.item-info")
+    stories.each do |item|
+      story = self.new
+      story.headline = item.search("h2.title").text.strip
+      story.summary = item.search("p.teaser").text.strip
+      @@all << story 
     end
    end 
    
-   def self.news_stories
-      self.grab_npr_page
-    end 
+  
 
  
   
