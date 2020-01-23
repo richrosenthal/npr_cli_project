@@ -1,4 +1,4 @@
-
+require 'pry'
 
 class NPR
   attr_accessor :headline, :summary 
@@ -18,7 +18,12 @@ class NPR
   def self.all 
     @@all 
   end 
- 
   
+   def grab_npr_page
+    Nokogiri::HTML(open("https://www.npr.org/"))
+    binding.pry
+   end 
+
+
   
 end 
