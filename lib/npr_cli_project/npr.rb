@@ -21,12 +21,12 @@ class NprCliProject::NPR
     
     doc = Nokogiri::HTML(open("https://www.npr.org/sections/news/"))
     
-    doc.css("div.slug-wrap").each do |project|
+    doc.search("div.slug-wrap").each do |project|
     story = self.new
     story.headline = doc.search("h2.title").text.strip
     story.summary = doc.search("p.teaser").text.strip
-    @@all << self 
-   # story 
+    #@@all << self 
+    story 
     end
    end 
    

@@ -19,8 +19,8 @@ class NprCliProject::CLI
    @news = NprCliProject::NPR.grab_npr_page
    binding.pry
   count = 1 
-  @news.each do  |news|
-      puts "#{count}. " + news.headline 
+  @news.each do  |news1|
+      puts "#{count}. "  
       count +=1 
     end 
   end 
@@ -30,10 +30,11 @@ class NprCliProject::CLI
     input = nil 
     while input != "exit"
     input = gets.strip.downcase
-    new_stories = 
+    new_stories = nil
      if input.to_i > 0
         news_stories = @news[input.to_i-1]
-        puts "#{news_stories.summary}"
+        # puts "#{news_stories.summary}"
+        puts "1"
     end 
   end 
 end 
