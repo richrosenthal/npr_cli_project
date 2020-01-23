@@ -1,3 +1,4 @@
+
 require 'pry'
 
 class NprCliProject::CLI 
@@ -17,7 +18,8 @@ class NprCliProject::CLI
     
     
    @news = NprCliProject::NPR.make_stories
-  
+   
+  binding.pry
   count = 1 
   @news.each do  |news1|
       puts "#{count}. "  
