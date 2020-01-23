@@ -15,8 +15,9 @@ class NprCliProject::CLI
   
   def list_headlines
     
-     binding.pry
-   @news = NPR.new 
+    
+   @news = NprCliProject::NPR.grab_npr_page
+   binding.pry
   count = 1 
   @news.each do  |news|
       puts "#{count}. " + news.headline 

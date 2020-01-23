@@ -19,13 +19,15 @@ class NprCliProject::NPR
    def self.grab_npr_page
     
     
-    doc = Nokogiri::HTML(open("https://www.npr.org/"))
+    doc = Nokogiri::HTML(open("https://www.npr.org/sections/news/"))
     
+    doc.css("div.slug-wrap").each do |project|
     story = self.new
-    story.headline = doc.search("h3.title").text.strip
+    story.headline = doc.search("h2.title").text.strip
     story.summary = doc.search("p.teaser").text.strip
-    
-    story 
+    @@all << self 
+   # story 
+    end
    end 
    
    def self.news_stories
