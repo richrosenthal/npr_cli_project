@@ -16,11 +16,7 @@ class NprCliProject::NPR
     @@all 
   end 
   
-   def self.grab_npr_page
-    
-     Nokogiri::HTML(open("https://www.npr.org/sections/news/"))
-     
-   end 
+
   #.self.stories method calls the .make_stories method and returns class variable array.
   
   def self.stories
