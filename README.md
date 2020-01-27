@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Once you select a news story you are interested in you can type in the number and read a short summary of the headline. You can type list to go back to the original list or you can type exit to quit the program.
 
 ## Development
 
