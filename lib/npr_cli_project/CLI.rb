@@ -38,7 +38,8 @@ class NprCliProject::CLI
   def list_headlines
     
     
-   @news = NprCliProject::NPR.make_stories
+   NprCliProject::Scraper.make_stories
+   @news = NprCliProject::NPR.all
    #binding.pry  
  
   count = 1 
