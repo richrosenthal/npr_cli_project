@@ -46,6 +46,7 @@ class NprCliProject::CLI
       puts "#{count}. " + news_stories.headline  
       count +=1 
     end 
+    puts ""
   end 
   
   
@@ -57,21 +58,23 @@ class NprCliProject::CLI
     while input != "exit"
     input = gets.strip.downcase
     new_stories = nil
-     if input.to_i > 0
+     if input.to_i > 0 && input.to_i <= @news.length
         news_stories = @news[input.to_i-1]
          puts "#{news_stories.summary}"
          puts ""
          puts "Type list to go back or exit to quit program"
          input2 = gets.strip.downcase
          if input2 == "list"
-           list_headlines
+           selection
          elsif 
             input2 == "exit"
               goodbye
          else 
            puts "I do not understand, please try again"
         end 
+        puts "error1"
       end 
+      puts "error2"
     end 
   end 
   
