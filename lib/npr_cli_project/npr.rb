@@ -9,9 +9,11 @@ class NprCliProject::NPR
  
  
   
-  def save 
-    @@all << self 
-  end 
+  # def save 
+  #   @@all << self 
+  # end 
+  
+  
   #self .all method will return the class variable @@all
   
   def self.all 
@@ -21,10 +23,10 @@ class NprCliProject::NPR
 
   #.self.stories method calls the .make_stories method and returns class variable array.
   
-  def self.stories
-    self.make_stories
-   @@all
-  end 
+  # def self.stories
+  #   self.make_stories
+  # @@all
+  # end 
   
   
   #.make_stories is scraping NPR website and creating a story object that will be shoveled into the class variable.
@@ -38,6 +40,7 @@ class NprCliProject::NPR
       story.summary = item.search("p.teaser").text.strip
       @@all << story 
     end
+    @@all
    end 
    
   
