@@ -1,6 +1,4 @@
 
-#require 'pry'
-
 class NprCliProject::CLI 
   
   

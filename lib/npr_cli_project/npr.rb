@@ -1,4 +1,3 @@
-#require 'pry'
 
 class NprCliProject::NPR
   attr_accessor :headline, :summary 
