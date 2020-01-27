@@ -1,3 +1,5 @@
+require 'pry'
+
 #Author Richard Rosenthal 2020
 
 class NprCliProject::NPR

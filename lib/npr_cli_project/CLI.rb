@@ -1,3 +1,4 @@
+require 'pry'
 #Author Richard Rosenthal Janaury 27 2020
 # “They blew out a breath and did the thing all heroes must do—they took that terrifying first step.”
 # ― Chloe Neill, Midnight Marked
@@ -38,7 +39,7 @@ class NprCliProject::CLI
     
     
    @news = NprCliProject::NPR.stories
-   
+   binding.pry  
  
   count = 1 
   @news.each do  |news_stories|

@@ -1,6 +1,6 @@
 require 'open-uri'
 require 'nokogiri'
-#require 'pry'
+require 'pry'
 
 
 require_relative "./npr_cli_project/version"
@@ -9,9 +9,4 @@ require_relative './npr_cli_project/npr'
 
 
 
-
-# module NprCliProject
-#   # class Error < StandardError; end
-#   # Your code goes here...
-# end
 
