@@ -8,20 +8,20 @@ class NprCliProject::CLI
   #call method starts the CLI class 
   def call 
     
-    puts <<-'EOF'
-    _        _______  _______    _______  _______  _______ 
-    ( (    /|(  ____ )(  ____ )  (  ____ \(  ____ \(       )
-    |  \  ( || (    )|| (    )|  | (    \/| (    \/| () () |
-    |   \ | || (____)|| (____)|  | |      | (__    | || || |
-    | (\ \) ||  _____)|     __)  | | ____ |  __)   | |(_)| |
-    | | \   || (      | (\ (     | | \_  )| (      | |   | |
-    | )  \  || )      | ) \ \__  | (___) || (____/\| )   ( |
-    |/    )_)|/       |/   \__/  (_______)(_______/|/     \|
+    # puts <<-'EOF'
+    # _        _______  _______    _______  _______  _______ 
+    # ( (    /|(  ____ )(  ____ )  (  ____ \(  ____ \(       )
+    # |  \  ( || (    )|| (    )|  | (    \/| (    \/| () () |
+    # |   \ | || (____)|| (____)|  | |      | (__    | || || |
+    # | (\ \) ||  _____)|     __)  | | ____ |  __)   | |(_)| |
+    # | | \   || (      | (\ (     | | \_  )| (      | |   | |
+    # | )  \  || )      | ) \ \__  | (___) || (____/\| )   ( |
+    # |/    )_)|/       |/   \__/  (_______)(_______/|/     \|
     
     
     
     
-    EOF
+    # EOF
     
     
     puts "Welcome to All Gems Considered"
@@ -39,7 +39,7 @@ class NprCliProject::CLI
     
     
    @news = NprCliProject::NPR.make_stories
-   binding.pry  
+   #binding.pry  
  
   count = 1 
   @news.each do  |news_stories|
@@ -58,7 +58,7 @@ class NprCliProject::CLI
     while input != "exit"
     input = gets.strip.downcase
     new_stories = nil
-     if input.to_i > 0 && input.to_i <= @news.length
+     if input.to_i > 0 && input.to_i <= @news.length 
         news_stories = @news[input.to_i-1]
          puts "#{news_stories.summary}"
          puts ""
@@ -66,15 +66,11 @@ class NprCliProject::CLI
          input2 = gets.strip.downcase
          if input2 == "list"
            selection
-         elsif 
-            input2 == "exit"
-              goodbye
-         else 
-           puts "I do not understand, please try again"
+         elsif input2 == "exit"
+            input = "exit"
         end 
-        puts "error1"
+      else puts "I do not understand, please try again."
       end 
-      puts "error2"
     end 
   end 
   
@@ -84,7 +80,7 @@ class NprCliProject::CLI
     puts "Wait wait are you sure? (Yes/No)"
     input = gets.strip.downcase
       if input == "no"
-        call 
+        selection 
       end 
   end 
   
