@@ -1,10 +1,13 @@
+#Author Richard Rosenthal Janaury 27 2020
+# “They blew out a breath and did the thing all heroes must do—they took that terrifying first step.”
+# ― Chloe Neill, Midnight Marked
 
 class NprCliProject::CLI 
   
   #call method starts the CLI class 
   def call 
     
-      puts <<-'EOF'
+    puts <<-'EOF'
     _        _______  _______    _______  _______  _______ 
     ( (    /|(  ____ )(  ____ )  (  ____ \(  ____ \(       )
     |  \  ( || (    )|| (    )|  | (    \/| (    \/| () () |
@@ -23,8 +26,7 @@ class NprCliProject::CLI
     puts "Welcome to All Gems Considered"
     puts "Your number one place for all NPR daily news"
     puts " "
-    puts " "
-    puts " "
+    
     list_headlines
     selection 
     goodbye
