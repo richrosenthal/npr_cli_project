@@ -1,8 +1,7 @@
 
 class NprCliProject::CLI 
   
-  
-  
+  #call method starts the CLI class 
   def call 
     
       puts <<-'EOF'
@@ -31,6 +30,7 @@ class NprCliProject::CLI
     goodbye
   end 
   
+  #list_headlines method will take the scraper object created from the NPR class and iterate over all of it's headline elements.
   
   def list_headlines
     
@@ -44,6 +44,9 @@ class NprCliProject::CLI
       count +=1 
     end 
   end 
+  
+  
+  #selection method will print out the headlines 
   
   def selection 
     puts "Enter the number of the headline to read its summary"
@@ -64,10 +67,12 @@ class NprCliProject::CLI
               goodbye
          else 
            puts "I do not understand, please try again"
-       end 
+        end 
+      end 
     end 
   end 
-end 
+  
+  # goodbye method will exit the program after confirming with the user if they would really want to exit
   
   def goodbye 
     puts "Wait wait are you sure? (Yes/No)"
