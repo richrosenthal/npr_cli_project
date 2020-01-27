@@ -1,5 +1,5 @@
 
-require 'pry'
+#require 'pry'
 
 class NprCliProject::CLI 
   
@@ -7,7 +7,7 @@ class NprCliProject::CLI
   
   def call 
     
-      puts "
+      puts <<-'EOF'
     _        _______  _______    _______  _______  _______ 
     ( (    /|(  ____ )(  ____ )  (  ____ \(  ____ \(       )
     |  \  ( || (    )|| (    )|  | (    \/| (    \/| () () |
@@ -20,11 +20,14 @@ class NprCliProject::CLI
     
     
     
-    "
+    EOF
     
     
     puts "Welcome to All Gems Considered"
     puts "Your number one place for all NPR daily news"
+    puts " "
+    puts " "
+    puts " "
     list_headlines
     selection 
     goodbye
@@ -62,7 +65,7 @@ class NprCliProject::CLI
             input2 == "exit"
               goodbye
          else 
-           puts "I do not understand"
+           puts "I do not understand, please try again"
        end 
     end 
   end 

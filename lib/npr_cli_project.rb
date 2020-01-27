@@ -1,6 +1,6 @@
 require 'open-uri'
 require 'nokogiri'
-require 'pry'
+#require 'pry'
 
 
 require_relative "./npr_cli_project/version"
