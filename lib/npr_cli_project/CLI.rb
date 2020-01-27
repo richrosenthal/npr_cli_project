@@ -65,12 +65,19 @@ class NprCliProject::CLI
          puts "Type list to go back or exit to quit program"
          input2 = gets.strip.downcase
          if input2 == "list"
-           selection
+            count = 1
+            @news.each do  |news_stories|
+            puts "#{count}. " + news_stories.headline  
+            count +=1 
+            end 
+            puts ""
          elsif input2 == "exit"
             input = "exit"
+            puts "ok"
         end 
       else puts "I do not understand, please try again."
       end 
+      
     end 
   end 
   
