@@ -1,8 +1,6 @@
 # NprCliProject
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/npr_cli_project`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Hello! Welcome to my first ever gem. This program scrapes the top news stories from NPR/news.org and provides a list of stories to choose from in the command line. Now you can read your headlines without any distractions.  Feel free to contribute to this in anyway you are interested as this is totally open source. - Richard Rosenthal
 
 ## Installation
 
